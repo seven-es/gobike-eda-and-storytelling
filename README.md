@@ -1,69 +1,81 @@
-# Ford GoBike System Dataset Exploration 
-## by SAUD ALSHUSHAN
+# 🚴‍♀️ Ford GoBike Data Visualization Project
 
-## Dataset
+## 📌 Project Overview
 
+This project explores the **Ford GoBike System Dataset** through both **exploratory** and **explanatory** data visualizations. Created as part of a data visualization course, the project is split into two parts:
 
+- **Part I: Exploratory Visualization**  
+  Using Python libraries to analyze trends, patterns, and distributions across variables in the dataset.
+  
+- **Part II: Explanatory Visualization**  
+  Communicating key findings through clean, effective visuals focused on storytelling and insights.
 
->duration_sec: Total rend duration
->start_time and end_time: Start and end duration of using the service
->start_station_id and end_station_id: Unique identifier for bike station
->start_station_name and end_station_name : Name of the station
->start_station_latitude,end_station_latitude,start_station_longitude and end_station_longitude: Used to calculate distance
->bike_id: Unique identifier for each bike
->user_type: Either subscriber or customer
->member_birth_year and member_gender: Information about the user
->bike_share_for_all_trip: Either yes the user is sharing the ride or not 
+---
 
+## 📁 Dataset Description
 
->Data wrangling
->Removed rows that had missing varibles
+The dataset contains trip-level information including:
 
->> member birth year
->>member gender
->>stations start and end name
->>stations sart and end id
->converted birth year varible to be integer
->converted start and end time to datetime format
+- `duration_sec`: Length of trip in seconds  
+- `start_time`, `end_time`: Timestamps of trip start and end  
+- `start_station_*`, `end_station_*`: Location info (IDs, names, coordinates)  
+- `bike_id`: Unique identifier for each bike  
+- `user_type`: Either `Subscriber` or `Customer`  
+- `member_birth_year`, `member_gender`: Demographics  
+- `bike_share_for_all_trip`: Whether the trip was shared
 
+---
 
+## 🧹 Data Wrangling Steps
 
-## Summary of Findings
+- Removed rows with missing values in key columns:
+  - `member_birth_year`, `member_gender`
+  - `start_station_name`, `end_station_name`
+  - `start_station_id`, `end_station_id`
+- Converted:
+  - Birth year to `int`
+  - Time columns to `datetime`
 
-> Plan to compare between the  user type features of subscribers and customers
+---
 
->Findings
+## 🔍 Summary of Findings
 
->Majority of the customers of the  GoBike System are subscribers and they represent about 90% of total users (use)
->Users of  the service typically have consistent trip durations
->Trips time is condenced for under 20 minutes trips
-> Majority of users are in their 30s (use)
->Shared trips is significantly lower than the number of non-shared trips
->Majority of bike trips occur during weekdays
->There is a noticeable drop in the number of trips during the weekend(use)
->Males represent the majority of the users
->Females make up one-third of the total male users 
->Customers do not have any shared trips
->Subscribers do not show a strong preference for shared trips
->Weekends have more customer trip activity than weekdays
->Weekdays are characterized by consistent Subscriber usage
->There is a positive relationship between trip distance and duration
->There is high activity in morning hour 6-8AM and also a higher one in 15-17PM usage of the service(use)
->Different genders have similar trip distance
->Subscribers and Customers exhibit similar usage patterns in terms of trip duration and distance, particularly for shorter trips however, as trip distances increase, the behavior of Subscribers tends to diverge from that of Customers
->Both Subscribers and Customers usually do not exceed 8 kilometers in their trips with long trips being  rare
->majority of trips across all days of the week fall within the 5-10 minute and 0-5 minute duration ranges
->Thursday have the highest number of trips in the 5-10 minute range
->Few trips exeeds 120 trip across all week
->Subscribers tend to use the service for shorter durations and distances
->Customers exhibit a broader range of trip durations and distances
->The avarage trip duration of customers in weekends is higher compared to week days
->The avarage customers trips is have overall  higher duration than Subscribers
->Subscriber are dominate in each gender segment
->There is a noticeably lower density of customers across all age groups, indicating that there are fewer people  to use the service as customers
->Subscribers tend to take more long trips than Customers, especially during peak commuting hours
-## Key Insights for Presentation
+This analysis compared usage patterns between **Subscribers** and **Customers**. Notable observations:
 
->Majority of users are in their 30s----> plan to  compare age by type of user
->Males represent the majority of the user---->See users precentage with their gender
->There is high activity in morning hour 6-8AM and also a higher one in 15-17PM usage of the service---->add which user type is dominated in given hour
+-  **Subscribers dominate the user base** (~90%)
+-  Most trips are **under 20 minutes**
+-  **Weekdays see higher usage**, especially during **6–8 AM** and **3–5 PM**
+-  **Customers are more active on weekends**
+-  Majority of users are in their **30s**
+-  **Males are the majority**, with females making up about one-third
+-  **Shared trips are rare**, and not used by Customers
+-  **Trip distance and duration are positively correlated**
+-  Both user types rarely exceed **8 km**
+-  **Subscribers take shorter, more consistent trips**; Customers have **wider variation**
+-  **Long trips are more common during commute hours**
+-  **Thursday has the most trips** in the 5–10 minute range
+
+---
+
+## 📌 Key Insights for Presentation
+
+- 📊 **Age & User Type**: Majority of users are in their 30s → Visualize age distribution by user type  
+- 🚻 **Gender Breakdown**: Males dominate → Compare usage by gender  
+- ⏰ **Peak Hours**: High usage during 6–8 AM and 3–5 PM → Show dominant user type per hour
+
+---
+
+## 🐍 Tools Used
+
+- `pandas`, `numpy`
+- `matplotlib`, `seaborn`
+- `datetime`
+
+---
+
+## 🧠 Author
+
+**SAUD ALSHUSHAN**  
+Created as part of a data visualization course project using the Ford GoBike dataset
+
+---
